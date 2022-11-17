@@ -151,7 +151,10 @@ defmodule PhxLiveStorybook.Story do
       end
 
       @impl unquote(component_behaviour(live?))
-      def container, do: {:div, class: "lsb-flex lsb-flex-col lsb-items-center lsb-gap-y-[5px]"}
+      def container,
+        do:
+          {:div,
+           class: "lsb-flex lsb-flex-col lsb-justify-center lsb-items-center lsb-gap-y-[5px]"}
 
       @impl unquote(component_behaviour(live?))
       def imports, do: []

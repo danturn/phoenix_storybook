@@ -223,7 +223,7 @@ defmodule PhxLiveStorybook.Story.Playground do
     ~H"""
     <div class={"lsb lsb-relative"}>
       <div class={[
-        "lsb lsb-min-h-32 lsb-border lsb-border-slate-100 lsb-rounded-md lsb-col-span-5 lg:lsb-col-span-2 lg:lsb-mb-0 lsb-flex lsb-items-center lsb-justify-center lsb-bg-white lsb-shadow-sm",
+        "lsb lsb-min-h-32 lsb-border lsb-border-slate-100 lsb-rounded-md lsb-col-span-5 lg:lsb-col-span-2 lg:lsb-mb-0 lsb-flex lsb-flex-col lsb-bg-white lsb-shadow-sm",
         if(@upper_tab != :preview, do: "lsb-hidden"),
         if(@story.container() != :iframe, do: "lsb-px-2")
       ]}>
@@ -247,7 +247,7 @@ defmodule PhxLiveStorybook.Story.Playground do
                   "topic" => "playground-#{inspect(self())}",
                   "backend_module" => @backend_module
                 },
-                container: {:div, style: "height: 100%; width: 100%;"}
+                container: {:div, style: "display: flex; flex-grow: 1;"}
           %>
         <% end %>
       </div>

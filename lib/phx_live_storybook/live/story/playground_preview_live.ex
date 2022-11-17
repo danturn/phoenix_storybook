@@ -86,9 +86,8 @@ defmodule PhxLiveStorybook.Story.PlaygroundPreviewLive do
       )
 
     ~H"""
-    <div id="playground-preview-live" style="width: 100%; height: 100%;">
-      <div id={"sandbox-#{@counter}"} class={LayoutView.sandbox_class(@socket, @story.container(), assigns)}
-           style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0; gap: 5px; height: 100%; width: 100%; padding: 10px;">
+    <div id="playground-preview-live" class="lsb-flex lsb-grow">
+      <div id={"sandbox-#{@counter}"} class={["lsb-grow", LayoutView.sandbox_class(@socket, @story.container(), assigns)]}>
         <%= ComponentRenderer.render(@context) %>
       </div>
     </div>

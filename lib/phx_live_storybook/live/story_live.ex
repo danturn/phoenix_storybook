@@ -353,18 +353,18 @@ defmodule PhxLiveStorybook.StoryLive do
           </div>
 
           <!-- Variation component preview -->
-          <div class="lsb lsb-border lsb-border-slate-100 lsb-rounded-md lsb-col-span-5 lg:lsb-col-span-2 lsb-mb-4 lg:lsb-mb-0 lsb-flex lsb-items-center lsb-justify-center lsb-p-2 lsb-bg-white lsb-shadow-sm">
+          <div class="lsb lsb-border lsb-border-slate-100 lsb-rounded-md lsb-col-span-5 lg:lsb-col-span-2 lsb-mb-4 lg:lsb-mb-0 lsb-flex lsb-flex-col lsb-items-center lsb-justify-center lsb-p-2 lsb-bg-white lsb-shadow-sm">
             <%= if @story.container() == :iframe do %>
               <iframe
                 phx-update="ignore"
                 id={iframe_id(@story, variation)}
                 src={path_to_iframe(@socket, @root_path, @story_path, variation_id: variation.id, theme: @theme)}
-                class="lsb-w-full lsb-border-0"
+                class="lsb-w-full lsb-border-0 lsb-grow"
                 height="0"
                 onload="javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+'px';}(this));"
               />
             <% else %>
-              <div class={LayoutView.sandbox_class(@socket, @story.container(), assigns)} {@sandbox_attributes}>
+              <div class={["lsb-grow", LayoutView.sandbox_class(@socket, @story.container(), assigns)]} {@sandbox_attributes}>
                 <%= ComponentRenderer.render(rendering_context) %>
               </div>
             <% end %>

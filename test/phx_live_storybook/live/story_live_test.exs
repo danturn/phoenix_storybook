@@ -225,7 +225,7 @@ defmodule PhxLiveStorybook.StoryLiveTest do
                {"div",
                 [
                   {"class",
-                   "theme-prefix-default lsb-sandbox lsb-flex lsb-flex-col lsb-items-center lsb-gap-y-[5px]"}
+                   "lsb-grow theme-prefix-default lsb-sandbox lsb-flex lsb-flex-col lsb-justify-center lsb-items-center lsb-gap-y-[5px]"}
                 ], _}
              ] = html
     end
@@ -237,7 +237,7 @@ defmodule PhxLiveStorybook.StoryLiveTest do
       assert [
                {"div",
                 [
-                  {"class", "theme-prefix-default lsb-sandbox block"},
+                  {"class", "lsb-grow theme-prefix-default lsb-sandbox block"},
                   {"data-foo", "bar"}
                 ], _}
              ] = html
